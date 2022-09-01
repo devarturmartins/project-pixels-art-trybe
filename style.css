@@ -1,0 +1,31 @@
+#title {
+  text-align: center;
+}
+
+.color {
+  border: solid black 1px;
+  padding: 2%;
+  display: inline-block;
+  margin-left: auto;
+}
+
+#blockPalette1 {
+  background-color: black;
+}
+
+#blockPalette2 {
+  background-color: #d7b49e;
+}
+
+#blockPalette3 {
+  background-color: #dc602e;
+}
+
+#blockPalette4 {
+ background-color: #ffc4eb; 
+}
+
+#button-random-color {
+  cursor: pointer;
+}
+
