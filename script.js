@@ -35,6 +35,11 @@ window.onload = () => {
 }
 button.addEventListener('click', armazenaCores);
 
-// function generatePixels () {
-//   const localPixels = document.
-// }
+function generatePixels () {
+  const blackPixel = document.querySelectorAll('.color');
+  for (let i = 0; i < blackPixel.length; i += 1) {
+    blackPixel[i].classList.remove()
+    blackPixel[i].classList.add('selected');
+    blackPixel[i].addEventListener('click', generatePixels)
+  }
+}
