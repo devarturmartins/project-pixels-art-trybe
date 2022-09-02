@@ -17,11 +17,24 @@ button.addEventListener('click', colorChange);
 
 function armazenaCores() {
   const blocoDeCores = document.querySelectorAll('.color');
-  const f = JSON.parse(localStorage.getItem('colorPalette'));
+  const f = [];
   for (let i = 0; i < blocoDeCores.length; i += 1) {
     const r = blocoDeCores[i].style.backgroundColor;
     f.push(r);
   }
   localStorage.setItem('colorPalette', JSON.stringify(f));
 }
+window.onload = () => {
+  const salvaRGB = JSON.parse(localStorage.getItem('colorPalette'));
+  if (localStorage.getItem('colorPalette')) {
+    for (let i = 1; i < salvaRGB.length; i += 1) {
+      const blocoDeCores = document.querySelectorAll('.color');
+      blocoDeCores[i].style.backgroundColor = salvaRGB[i];
+    }
+  }
+}
 button.addEventListener('click', armazenaCores);
+
+// function generatePixels () {
+//   const localPixels = document.
+// }
