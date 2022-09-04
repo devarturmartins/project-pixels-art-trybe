@@ -35,11 +35,12 @@ window.onload = () => {
 }
 button.addEventListener('click', armazenaCores);
 
-function generatePixels () {
+function generatePixels() {
   const blackPixel = document.querySelectorAll('.color');
   for (let i = 0; i < blackPixel.length; i += 1) {
-    blackPixel[i].classList.remove()
-    blackPixel[i].classList.add('selected');
-    blackPixel[i].addEventListener('click', generatePixels)
+    if (blackPixel[i] !== blackPixel[0]) {
+      blackPixel[0].classList.remove('selected');
+      blackPixel[i].classList.add('selected');
+    }
   }
 }
