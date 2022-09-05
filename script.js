@@ -32,15 +32,39 @@ window.onload = () => {
       blocoDeCores[i].style.backgroundColor = salvaRGB[i];
     }
   }
-}
+};
+
 button.addEventListener('click', armazenaCores);
 
+function removeCores() {
+  const blackPixel = document.querySelectorAll('.color');
+  for (let index = 0; index < blackPixel.length; index += 1) {
+    blackPixel[index].classList.remove('selected');
+  }
+}
 function generatePixels() {
   const blackPixel = document.querySelectorAll('.color');
-  for (let i = 0; i < blackPixel.length; i += 1) {
-    if (blackPixel[i] !== blackPixel[0]) {
-      blackPixel[0].classList.remove('selected');
-      blackPixel[i].classList.add('selected');
+  for (let index = 0; index < blackPixel.length; index += 1) {
+    if (blackPixel[index] === blackPixel[0]) {
+      removeCores();
+      blackPixel[index].classList.add('selected');
+    }
+    else if (blackPixel[index] === blackPixel[1]) {
+      removeCores();
+      blackPixel[index].classList.add('selected');
+    }
+    else if (blackPixel[index] === blackPixel[2]) {
+      removeCores();
+      blackPixel[index].classList.add('selected');
+    }
+    else {
+      removeCores();
+      blackPixel[index].classList.add('selected');
     }
   }
+}
+
+const blocoDeCores = document.querySelectorAll('.color');
+for (let j = 0; j < blocoDeCores.length; j += 1) {
+  blocoDeCores[j].addEventListener('click', generatePixels);
 }
