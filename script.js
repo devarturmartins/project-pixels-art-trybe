@@ -27,7 +27,7 @@ function armazenaCores() {
 window.onload = () => {
   const salvaRGB = JSON.parse(localStorage.getItem('colorPalette'));
   if (localStorage.getItem('colorPalette')) {
-    for (let i = 1; i < salvaRGB.length; i += 1) {
+    for (let i = 0; i < salvaRGB.length; i += 1) {
       const blocoDeCores = document.querySelectorAll('.color');
       blocoDeCores[i].style.backgroundColor = salvaRGB[i];
     }
@@ -47,26 +47,41 @@ function generatePixels(event) {
   for (let index = 0; index < blackPixel.length; index += 1) {
     removeCores();
     event.target.classList.add('selected');
-  //   if (blackPixel[index] === blackPixel[0]) {
-  //     removeCores();
-  //     blackPixel[index].classList.add('selected');
-  //   }
-  //   else if (blackPixel[index] === blackPixel[1]) {
-  //     removeCores();
-  //     blackPixel[index].classList.add('selected');
-  //   }
-  //   else if (blackPixel[index] === blackPixel[2]) {
-  //     removeCores();
-  //     blackPixel[index].classList.add('selected');
-  //   }
-  //   else {
-  //     removeCores();
-  //     blackPixel[index].classList.add('selected');
-  //   }
   }
 }
+// tentativa de fazer de outra forma que não deu certo
+//   if (blackPixel[index] === blackPixel[0]) {
+//     removeCores();
+//     blackPixel[index].classList.add('selected');}
+//   else if (blackPixel[index] === blackPixel[1]) {
+//     removeCores();
+//     blackPixel[index].classList.add('selected');}
+//   else if (blackPixel[index] === blackPixel[2]) {
+//     removeCores();
+//     blackPixel[index].classList.add('selected');}
+//   else {
+//     removeCores();
+//     blackPixel[index].classList.add('selected');}
 
 const blocoDeCores = document.querySelectorAll('.color');
 for (let j = 0; j < blocoDeCores.length; j += 1) {
   blocoDeCores[j].addEventListener('click', generatePixels);
+}
+
+function alteraCorPixel(event) {
+  const pixelsPosition = document.querySelectorAll('.pixel');
+  const selectedColor = document.querySelector('.selected');
+  // const blackColor = document.querySelectorAll('.color');
+  // for (let index = 0; index < pixelsPosition.length; index += 1) {
+    // if (selectedColor.style.backgroundColor === '') {
+    //   event.target.style.backgroundColor = 'rgb(0,0,0)';
+    // }
+    // else {
+      event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    // }
+  // }
+}
+const pixelsPosition = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixelsPosition.length; index += 1) {
+  pixelsPosition[index].addEventListener('click', alteraCorPixel);
 }
