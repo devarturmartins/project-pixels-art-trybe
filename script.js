@@ -42,25 +42,27 @@ function removeCores() {
     blackPixel[index].classList.remove('selected');
   }
 }
-function generatePixels() {
+function generatePixels(event) {
   const blackPixel = document.querySelectorAll('.color');
   for (let index = 0; index < blackPixel.length; index += 1) {
-    if (blackPixel[index] === blackPixel[0]) {
-      removeCores();
-      blackPixel[index].classList.add('selected');
-    }
-    else if (blackPixel[index] === blackPixel[1]) {
-      removeCores();
-      blackPixel[index].classList.add('selected');
-    }
-    else if (blackPixel[index] === blackPixel[2]) {
-      removeCores();
-      blackPixel[index].classList.add('selected');
-    }
-    else {
-      removeCores();
-      blackPixel[index].classList.add('selected');
-    }
+    removeCores();
+    event.target.classList.add('selected');
+  //   if (blackPixel[index] === blackPixel[0]) {
+  //     removeCores();
+  //     blackPixel[index].classList.add('selected');
+  //   }
+  //   else if (blackPixel[index] === blackPixel[1]) {
+  //     removeCores();
+  //     blackPixel[index].classList.add('selected');
+  //   }
+  //   else if (blackPixel[index] === blackPixel[2]) {
+  //     removeCores();
+  //     blackPixel[index].classList.add('selected');
+  //   }
+  //   else {
+  //     removeCores();
+  //     blackPixel[index].classList.add('selected');
+  //   }
   }
 }
 
