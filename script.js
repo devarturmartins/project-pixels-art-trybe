@@ -43,11 +43,8 @@ function removeCores() {
   }
 }
 function generatePixels(event) {
-  const blackPixel = document.querySelectorAll('.color');
-  for (let index = 0; index < blackPixel.length; index += 1) {
-    removeCores();
-    event.target.classList.add('selected');
-  }
+  removeCores();
+  event.target.classList.add('selected');
 }
 // tentativa de fazer de outra forma que não deu certo
 //   if (blackPixel[index] === blackPixel[0]) {
@@ -71,22 +68,15 @@ for (let j = 0; j < blocoDeCores.length; j += 1) {
 function alteraCorPixel(event) {
   const pixelsPosition = document.querySelectorAll('.pixel');
   const selectedColor = document.querySelector('.selected');
-  // const blackColor = document.querySelectorAll('.color');
-  // for (let index = 0; index < pixelsPosition.length; index += 1) {
-    // if (selectedColor.style.backgroundColor === '') {
-    //   event.target.style.backgroundColor = 'rgb(0,0,0)';
-    // }
-    // else {
-      event.target.style.backgroundColor = selectedColor.style.backgroundColor;
-    // }
-  // }
+  event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+
 }
 const pixelsPosition = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixelsPosition.length; index += 1) {
   pixelsPosition[index].addEventListener('click', alteraCorPixel);
 }
 
-function limpaTela (event) {
+function limpaTela() {
   const pixelQuadrado = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixelQuadrado.length; index += 1) {
     pixelQuadrado[index].style.backgroundColor = 'white';
