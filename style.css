@@ -9,22 +9,6 @@
   margin-left: auto;
 }
 
-#blockPalette1 {
-  background-color: rgb(0, 0, 0);
-}
-
-#blockPalette2 {
-  background-color: #d7b49e;
-}
-
-#blockPalette3 {
-  background-color: #dc602e;
-}
-
-#blockPalette4 {
- background-color: #ffc4eb; 
-} */
-
 #button-random-color {
   cursor: pointer;
 }

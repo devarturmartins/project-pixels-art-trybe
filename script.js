@@ -26,14 +26,11 @@ function armazenaCores() {
 }
 window.onload = () => {
   const salvaRGB = JSON.parse(localStorage.getItem('colorPalette'));
-  if (localStorage.getItem('colorPalette') !== undefined) {
+  if (localStorage.getItem('colorPalette')) {
     for (let i = 0; i < salvaRGB.length; i += 1) {
       const blocoDeCores = document.querySelectorAll('.color');
       blocoDeCores[i].style.backgroundColor = salvaRGB[i];
     }
-  }
-  else {
-    // localStorage.setItem('colorPalette', colorChange);
   }
 };
 
@@ -88,5 +85,3 @@ const pixelsPosition = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixelsPosition.length; index += 1) {
   pixelsPosition[index].addEventListener('click', alteraCorPixel);
 }
-
-
