@@ -85,3 +85,12 @@ const pixelsPosition = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixelsPosition.length; index += 1) {
   pixelsPosition[index].addEventListener('click', alteraCorPixel);
 }
+
+function limpaTela (event) {
+  const pixelQuadrado = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelQuadrado.length; index += 1) {
+    pixelQuadrado[index].style.backgroundColor = 'white';
+  }
+}
+const btn = document.querySelector('#clear-board');
+btn.addEventListener('click', limpaTela);
