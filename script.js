@@ -84,3 +84,27 @@ function limpaTela() {
 }
 const btn = document.querySelector('#clear-board');
 btn.addEventListener('click', limpaTela);
+
+function desenhoSalvo() {
+  const pixeis = document.querySelectorAll('.pixel');
+  const armazena = [];
+  for (let index = 0; index < pixeis.length; index += 1) {
+    const cores = pixeis[index].style.backgroundColor;
+    armazena.push(cores);
+  }
+  localStorage.setItem('pixelBoard', JSON.stringify(armazena));
+}
+
+function transformaEmObj () {
+  const pixelBoardObj = JSON.parse(localStorage.getItem('pixelBoard'));
+  if (localStorage.getItem('pixelBoard')) {
+    for (let j = 0; j < pixelBoardObj.length; j += 1) {
+      const pixeis = document.querySelectorAll('.pixel');
+      pixeis[j].style.backgroundColor = pixelBoardObj[j];
+    }
+  }
+}
+const pixeis = document.querySelector('#pixel-board');
+pixeis.addEventListener('click', desenhoSalvo);
+
+transformaEmObj();
