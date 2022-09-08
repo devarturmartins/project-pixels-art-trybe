@@ -108,3 +108,22 @@ const pixeis = document.querySelector('#pixel-board');
 pixeis.addEventListener('click', desenhoSalvo);
 
 transformaEmObj();
+
+function squareLength () {
+  const input = document.querySelector('#board-size');
+  const text = input.value;
+  const numberSquare = parseInt(text);
+  const pixeis = document.querySelector('#pixel-board');
+  if (numberSquare < 0) {
+    window.alert('Board inválido!')
+  }
+  else {
+    const pixeisFilho = document.querySelector('#pixel-board div');
+    pixeis.removeChild(pixeisFilho);
+    const element = document.createElement('div');
+    for (let index = 0; index < numberSquare.length; index += 1) { pixeis[index].appendChild(element);
+    }
+  }
+}
+const buttonSquare = document.querySelector('#generate-board');
+buttonSquare.addEventListener('click', squareLength);
