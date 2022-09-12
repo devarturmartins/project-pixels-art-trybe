@@ -120,30 +120,28 @@ pixeis.addEventListener('click', desenhoSalvo);
 
 transformaEmObj();
 
-// function squareLength() {
-//   const input = document.querySelector('#board-size');
-//   const text = input.value;
-//   const numberSquare = parseInt(text);
-//   const pixeiss = document.querySelector('#pixel-board');
-//   if (numberSquare < 0) {
-//     window.alert('Board inválido!');
-//   }
-//   else {
-//     const pixelBoard = document.getElementById('pixel-board');
-//     const filhosPixelBoard = document.querySelectorAll('#pixel-board div.pixel');
-//     pixelBoard.remove();
-//     // for (let i = 0; filhosPixelBoard.length; i += 1) {
-//     //   pixelBoard.removeChild(filhosPixelBoard);
-//     // }
-//     // for (let index = 0; index < numberSquare.length; index += 1) {
-//     //   const element = document.createElement('div');
-//     //   element.classList.add('pixel');
-//     //   pixeiss.appendChild(element);
-//     // }
-//   }
-// }
-// const buttonSquare = document.querySelector('#generate-board');
-// buttonSquare.addEventListener('click', squareLength);
+function squareLength() {
+  const input = document.querySelector('#board-size');
+  const text = input.value;
+  const numberSquare = parseInt(text);
+  const pixeiss = document.querySelector('#pixel-board');
+  if (numberSquare < 0) {
+    window.alert('Board inválido!');
+  }
+  else {
+    const pixelBoard = document.getElementById('pixel-board');
+    const filhosPixelBoard = document.querySelectorAll('#pixel-board div.pixel');
+    // pixelBoard.remove();
+    for (let i = 0; filhosPixelBoard.length; i += 1) {
+      pixelBoard.removeChild(filhosPixelBoard);
+    }
+    for (let index = 0; index < numberSquare.length; index += 1) {
+      const element = document.createElement('div');
+      element.classList.add('pixel');
+      pixeiss.appendChild(element);
+    } } }
+const buttonSquare = document.querySelector('#generate-board');
+buttonSquare.addEventListener('click', squareLength);
 // window.onload = () => {
 //   const pixeiss = document.querySelector('#pixel-board');
 //   for (let index = 0; index < 26; index += 1) {
