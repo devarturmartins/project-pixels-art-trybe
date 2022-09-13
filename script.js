@@ -132,7 +132,7 @@ function squareLength() {
     const pixelBoard = document.getElementById('pixel-board');
     const filhosPixelBoard = document.querySelectorAll('#pixel-board div.pixel');
     // pixelBoard.remove();
-    for (let i = 0; filhosPixelBoard.length; i += 1) {
+    for (let i = 0; i < filhosPixelBoard.length; i += 1) {
       pixelBoard.removeChild(filhosPixelBoard);
     }
     for (let index = 0; index < numberSquare.length; index += 1) {
