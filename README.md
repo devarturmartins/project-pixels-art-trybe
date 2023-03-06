@@ -49,27 +49,6 @@ Pixel Art é um tipo de arte que usa pixels visíveis para compor uma imagem ou 
 - Caso a avaliação falhe com alguma mensagem de erro do tipo `[409:0326/130838.878602:FATAL:memory.cc(22)] Out of memory. size=4194304` é provável que as imagens que está utilizando são muito grandes. Tente redimensioná-las para um tamanho menor.
 </details>
 
-<details>
-  <summary><strong>🎛 Linter</strong></summary><br />
-
-Para garantir a qualidade do código, vamos utilizar neste projeto os linters `ESLint` e `StyleLint`.
-Desta forma, o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível e de fácil manutenção! 
-  Para rodar o `ESLint` e o `StyleLint` localmente no projeto, execute os comandos abaixo:
-
-  1. Para avaliar se os arquivos com a extensão `CSS` estão com o padrão correto
-
-```bash
-npm run lint:styles
-```
-
-  2. Para avaliar se os arquivos com a extensão `JS` estão com o padrão correto
-
-```bash
-npm run lint
-```
-
-⚠️ **Atenção** O `ESLint` e o `StyleLint` não serão avaliados neste projeto. Você pode rodar os testes localmente e fazer as correções se desejar. ⚠️
-
 # Passo a Passo
 
 ## 1 - Adicione à página o título "Paleta de Cores".
