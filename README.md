@@ -6,6 +6,14 @@ Pixel Art é um tipo de arte que usa pixels visíveis para compor uma imagem ou 
 
 ---
 
+## ✔️ Técnicas e tecnologias utilizadas
+
+- ``HTML``
+- ``CSS``
+- ``JavaScript``
+
+---
+
 # :hammer: Funcionalidades do projeto
 ![exemplo de arte com pixels](./art-with-pixels.gif)
 
